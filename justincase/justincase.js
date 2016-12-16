@@ -1,6 +1,4 @@
 'use strict'
-
-
 class Fooditem {
   constructor(FooditemInfo) {
     this.name = FooditemInfo.name;
@@ -15,86 +13,6 @@ class Fooditem {
       this.glutenfree + "\n" + this.citrusfree
   }
 }
-
-class Drinks {
-  constructor(name, description, price, ingredients) {
-    this.name = name;
-    this.description = description;
-    this.price = price;
-    this.ingredients = ingredients;
-   }
-}
-
-var drinkList = [
-  {
-    name : "Margarita",
-    description : "Patron' margarita",
-    price : 8.99,
-    ingredients : "Patron', Margarita mix",
-  },
-  {
-    name : "Pina' colada",
-    description : "Strawberry pina' colada",
-    price : 8.99,
-    ingredients : "Vodka, colada mix",
-  }
-]
-
-class Plate {
-  constructor(name, description, price, ingredients){
-    this.name = name;
-    this.description = description;
-    this.price = price; 
-    this.ingredients = ingredients; 
-  }
-}
-
-
-  
-var orderList = [
-  {
-    name : "Smothered Enchiladas",
-    description : "Beef, Chicken or Steak",
-    price : 12.99,
-    ingredients : ["choice of meat", "corn tortilla", "green chile", "cheese"],
-  },
-  {
-    name : "Tostada",
-    description : "Flour tortilla grilled with deliciousness inside",
-    price : 10.99,
-    ingredients : ["Flour tortilla", "Refried beans", "Lettuce", "Salsa", "Sour Cream"],
-  },
-  {
-    name : "Huevos Rancheros",
-    description : "Smothered eggs with hashbrowns",
-    price : 14.99,
-    ingredients : ["Organic cage free eggs", "Salsa", "Ranch", "Hashbrowns"],
-  },
-  {
-    name : "Burrito",
-    description : "Tortilla filled with goodness",
-    price : 10.99,
-    ingredients : ["Refried beans", "Choice of: Steak, Chicken, or Beef", "Cheese"],
-  }
-]
- 
-
-
-var Menu = [];
-
-Menu.push(orderList);
-Menu.push(drinkList);
-    
-
-class Restaurant {
-  constructor(name, description, menu){
-    this.name = name;
-    this.description = description;
-    this.menu = menu;
-  }
-}
-
-var StromboliGaucamole = new Restaurant("Stromboli Gaucamole", "Mexican Food", Menu)
 
 
 
@@ -121,30 +39,89 @@ var StromboliGaucamole = new Restaurant("Stromboli Gaucamole", "Mexican Food", M
 //   citrusfree: "no",
 // })     
 
+class Drinks {
+  constructor(name, description, price, ingredients) {
+    this.name = name;
+    this.description = description;
+    this.price = price;
+    this.ingredients = ingredients;
+   }
+}
+  
+  var Coconutrum = new Drinks(
+  "Coconut Rum",
+  "alcoholic beverage",
+  "9.99",
+  ["malibu rum", "coca cola", "splash of pineapple juice"]
+);
+
+class Plates {
+  constructor(name, description, price, ingredients) {
+    this.name = name;
+    this.description = description;
+    this.price = price;
+    this.ingredients = ingredients;
+  }
+  
+}
+
+var orderList = [
+  {
+    name : "Smothered Enchiladas",
+    description : "Beef, Chicken or Steak",
+    price : 12.99,
+    ingredients : ["choice of meat", "corn tortilla", "green chile", "cheese"],
+  },
+  {
+    name : "Tostada",
+    description : "Flour tortilla grilled with deliciousness inside",
+    price : 10.99,
+    ingredients : ["Flour tortilla", "Refried beans", "Lettuce", "Salsa", "Sour Cream"],
+  },
+  {
+    name : "Huevos Rancheros",
+    description : "Smothered eggs with hashbrowns",
+    price : 14.99,
+    ingredients : ["Organic cage free eggs", "Salsa", "Ranch", "Hashbrowns"],
+  },
+  {
+    name : "Burrito",
+    description : "Tortilla filled with goodness",
+    price : 10.99,
+    ingredients : ["Refried beans", "Choice of: Steak, Chicken, or Beef", "Cheese"],
+  }
+]
+
+class Menu {
+  constructor(plates, drinks){
+    this.orderList = plates,
+    this.Drinks = drinks
+  }
+}
+
+class Restaurant {
+  constructor(name, description, menu){
+    this.name = name;
+    this.description = description;
+    this.menu = menu;
+  }
+}
+
+var StromboliGaucamole = new Restaurant(
+      "Stromboli Guacamole",
+      "A twist on modern Mexican food",
+       [orderList]);
 
 
 
 
-
-
-
+class Customer {
+  constructor(dietarypreferance){
+    this.vegan = dietarypreferance.vegan;
+    this.glutenfree = dietarypreferance.glutenfree;
+    this.citrusfree = dietarypreferance.citrusfree;
+  }
+}
+   
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
