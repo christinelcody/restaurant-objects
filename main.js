@@ -38,13 +38,13 @@ var drinkList = [
     name : "Margarita",
     description : "Patron' margarita",
     price : 8.99,
-    ingredients : "Patron', Margarita mix",
+    ingredients : ["Patron'", "Margarita mix"],
   },
   {
     name : "Pina' colada",
     description : "Strawberry pina' colada",
     price : 8.99,
-    ingredients : "Vodka, colada mix",
+    ingredients : ["Vodka", "colada mix"],
   }
 ]
 

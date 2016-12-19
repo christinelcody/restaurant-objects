@@ -5,17 +5,20 @@ angular.module("Restaurant", [])
 
 function Stromcontroller(){
   var guac = this;
-  
+  window.guac = guac
   guac.Itemarray = [];
   
   guac.Preference = Dietarypreference;
   
-  guac.Chooseplate = function(plate) {
-    guac.Itemarray.push(plate);
+  guac.Addplate = function(plateorder) {
+    console.log("adding plate")
+    guac.Itemarray.push(plateorder);
+    
   }
   
-  guac.Choosedrink = function(drink){
-    guac.Itemarray.push(drink);
+  guac.Adddrink = function(drinkorder){
+    console.log("adding drink")
+    guac.Itemarray.push(drinkorder);
   }  
   
   guac.menu = StromboliGaucamole;

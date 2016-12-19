@@ -22,10 +22,10 @@
   <h3>Food Menu</h3>
  <ul> 
    
-    <li ng-repeat="plates in guac.orderlist">
+    <li ng-repeat="plates in guac.orderlist" ng-click="guac.Addplate(plates)">
        <h4>{{plates.name}} : {{plates.description}}</h4>
       <h4>Ingredients :</h4>
-        <h4 ng-repeat="ing in plates.ingredients"> {{ing}}</h4>
+        <h4 ng-repeat="ing in plates.ingredients track by $index"> {{ing}}</h4>
        <h4>{{plates.price}}</h4>
       
    
@@ -38,10 +38,10 @@
     <h3>Drinks Menu</h3>
   <ul>
   
-    <li ng-repeat="drinks in guac.drinklist">
+    <li ng-repeat="drinks in guac.drinklist" ng-click="guac.Adddrink(drinks)">
       <h4>{{drinks.name}} : {{drinks.description}}</h4>
       <h4>Ingredients :</h4>
-        <h4 ng-repeat="ing in drinks.ingredients"> {{ing}}</h4>
+        <h4 ng-repeat="ing in drinks.ingredients track by $index"> {{ing}}</h4>
        <h4>{{drinks.price}}</h4>
     
     </li>
