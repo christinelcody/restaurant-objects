@@ -16,6 +16,14 @@ class Fooditem {
   }
 }
 
+class Dietarypreference {
+  constructor(DietaryInfo){
+    this.vegan = DietaryInfo;
+    this.citrusfree = DietaryInfo;
+    this.glutenfree = DietaryInfo;
+  }
+}
+
 class Drinks {
   constructor(name, description, price, ingredients) {
     this.name = name;
@@ -84,6 +92,9 @@ var Menu = [];
 
 Menu.push(orderList);
 Menu.push(drinkList);
+for(var i = 0; i < Menu.length; i++){
+   console.log(Menu[i]);
+}
     
 
 class Restaurant {
@@ -92,9 +103,14 @@ class Restaurant {
     this.description = description;
     this.menu = menu;
   }
+  stringify(Restaurant){
+    
+  }
 }
 
 var StromboliGaucamole = new Restaurant("Stromboli Gaucamole", "Mexican Food", Menu)
+
+
 
 
 

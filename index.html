@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="Restaurant" lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css">
   <title>restaurant-objects</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.9/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
   <script src="main.js"></script>
+  <script src="angular.js"></script>
   <h2>
   STROMBOLI GUACAMOLE  
   </h2>
@@ -12,7 +18,40 @@
   </h3>
   <IMG SRC="Flag-Pins-Italy-Mexico.jpg" ALT="some text" WIDTH=96 HEIGHT=96>
 </head>
-<body>
+<body ng-controller="StromGuac as guac">
+  <h3>Food Menu</h3>
+ <ul> 
+   
+    <li ng-repeat="plates in guac.orderlist">
+       <h4>{{plates.name}} : {{plates.description}}</h4>
+      <h4>Ingredients :</h4>
+        <h4 ng-repeat="ing in plates.ingredients"> {{ing}}</h4>
+       <h4>{{plates.price}}</h4>
+      
+   
+   </li>
+   
+   
+  
+ </ul>
+  <br>
+    <h3>Drinks Menu</h3>
+  <ul>
+  
+    <li ng-repeat="drinks in guac.drinklist">
+      <h4>{{drinks.name}} : {{drinks.description}}</h4>
+      <h4>Ingredients :</h4>
+        <h4 ng-repeat="ing in drinks.ingredients"> {{ing}}</h4>
+       <h4>{{drinks.price}}</h4>
+    
+    </li>
+  
+  </ul>
+  
+  
+  
+  
+  
   
 </body>
 </html>
